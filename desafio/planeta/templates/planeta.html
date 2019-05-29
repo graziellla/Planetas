@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ planeta.imagem.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ planeta.nome }}</h5>
+            <p class="card-text">Posição em relação ao sol: {{ planeta.fk_posicao.nome }}</p>
+            <p class="card-text"> Rotação: {{ planeta.rotacao }}</p>
+            <p class="card-text">Transação: {{ planeta.Translacao }}</p>
+
+        </div>
+    </div>
+    <a href="{% url 'planeta:listar_planetas' %}">
+        <button>Voltar</button>
+    </a>
+{% endblock %}
